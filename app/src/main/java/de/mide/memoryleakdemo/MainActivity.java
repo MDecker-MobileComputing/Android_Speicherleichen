@@ -194,7 +194,7 @@ public class MainActivity extends Activity {
 		
 		// Ohne die folgende Zeile entsteht eine Speicherleich, weil die Activity-Instanz wegen
 		// dem noch laufenden Thread nicht vom GC beseitigt werden kann.
-		_blinkerThread.beenden();
+		//_blinkerThread.beenden();
 		
 		Log.i(TAG4LOGGING, "Methode onDestroy() für Instanz " + _instanzNummer + " aufgerufen.");
 	}
