@@ -41,6 +41,7 @@ public class MainActivity extends Activity {
 	public MainActivity() {
 
 		super();
+
 		INSTANZEN_ZAEHLER++;
 		_instanzNummer = INSTANZEN_ZAEHLER;
 		
@@ -61,8 +62,7 @@ public class MainActivity extends Activity {
 		setTitle("Instanz-Nummer " + _instanzNummer);
 									
 		_blinkendesTextview = findViewById(R.id.textview_blinkend);
-		
-		
+
 		_blinkerThread = new BlinkerThread(_instanzNummer, _blinkendesTextview);
 		_blinkerThread.start();		
 	}
@@ -157,10 +157,14 @@ public class MainActivity extends Activity {
 			__beenden = true;
 		}
 
+		/**
+		 * Destruktor-Methode der Thread-Klasse.
+		 */
 		@Override
 		protected void finalize() throws Throwable {
 
 			super.finalize();
+
 			Log.i(TAG4LOGGING,
                     "Der GC hat die Instanz " + _instanzNummer + " von BlinkerThread (innere Klasse) gelöscht.");
 		}
